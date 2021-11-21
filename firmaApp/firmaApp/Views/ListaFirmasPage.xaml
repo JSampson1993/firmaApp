@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="firmaApp.Views.ListaFirmasPage">
+    
+    
+    <CollectionView x:Name="lstFirmas"  >
+        <CollectionView.ItemTemplate >
+            <DataTemplate>
+                <ViewCell >
+
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            
+
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding codigo}" Grid.Row="0" Grid.Column="0"  TextColor="Blue" />
+                        <Label Text="{Binding name}" Grid.Row="0" Grid.Column="1"  TextColor="Blue"/>
+                        <Label Text="{Binding descripcion}" Grid.Row="0" Grid.Column="2" TextColor="Blue"/>
+                        <!--<Label Text="{Binding MiImagen}" Grid.Row="0" Grid.Column="3"       TextColor="Blue"/>-->
+
+                        <Image  Grid.Row="0" Grid.Column="3" Source="{Binding MiImagen}"
+                                       HeightRequest="40"
+                                       WidthRequest="50"/>
+
+                    </Grid>
+                    
+                    
+                </ViewCell>
+                <!--<ImageCell Text="{Binding content}" ImageSource="{Binding MiImagen}"/>-->
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+    
+    <!--<ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>-->
+</ContentPage>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="firmaApp.Views.SignatureSample"
+             xmlns:signature="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10">
+
+                <signature:SignaturePadView x:Name="signature" HorizontalOptions="FillAndExpand" StrokeColor="Blue"
+                          VerticalOptions="StartAndExpand" HeightRequest="300" MinimumHeightRequest="300" />
+
+                <Label Text="Nombre Usuario"/>
+                <Entry x:Name="txtnombre"/>
+
+                <Label Text="Descripcion"/>
+                <Entry x:Name="txtdescrip"/>
+
+                <Button x:Name="btnlista" Text="Firmas Guardadas" HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start" Visual="Material" Clicked="btnlista_Clicked"/>
+                
+                <Button x:Name="btnguardar" Text="Guardar Firma" HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start" Visual="Material" Clicked="btnguardar_Clicked"/>
+
+                <Button x:Name="btnSubmit" Text="Submit Signature" HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start" Visual="Material" Clicked="btnSubmit_Clicked"/>
+
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                    
+                    <Image x:Name="imgSignature" Grid.Row="0" Grid.Column="0" HeightRequest="200" WidthRequest="200"
+                                       Margin="2" VerticalOptions="Start" HorizontalOptions="Start"/>
+
+                    <Label Text="Base64 string of Signature" Margin="2" VerticalOptions="Start" HorizontalOptions="Start"
+                              Grid.Row="1" Grid.Column="0"/>
+
+                    <Label x:Name="lblBase64Value" Grid.Row="2" Grid.Column="0" VerticalOptions="FillAndExpand"
+                               HorizontalOptions="FillAndExpand" Margin="2"/>
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
